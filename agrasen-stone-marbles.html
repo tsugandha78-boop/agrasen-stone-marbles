@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agrasen Stone & Marbles — Natural Stone & Granite Specialists</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+  /* ── TOKEN SYSTEM ─────────────────────────────────── */
+  :root {
+    --stone-black:  #1A1814;
+    --stone-dark:   #252219;
+    --stone-mid:    #3D3A32;
+    --stone-warm:   #7A7060;
+    --gold:         #C9A96E;
+    --gold-light:   #E8D5A8;
+    --cream:        #F5F0E8;
+    --white:        #FDFCFA;
+
+    --ff-display:  'Cormorant Garamond', serif;
+    --ff-body:     'Inter', sans-serif;
+    --ff-italic:   'Playfair Display', serif;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--ff-body);
+    background: var(--stone-black);
+    color: var(--cream);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ─────────────────────────────────────────── */
+  nav {
+    position: fixed; top:0; left:0; right:0; z-index:100;
+    display: flex; align-items:center; justify-content:space-between;
+    padding: 1.4rem 4rem;
+    background: rgba(26,24,20,0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,169,110,0.15);
+  }
+
+  .nav-logo {
+    font-family: var(--ff-display);
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  .nav-logo span { color: var(--cream); }
+
+  nav ul {
+    display: flex; gap: 2.5rem; list-style: none;
+  }
+
+  nav ul a {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--stone-warm);
+    text-decoration: none;
+    transition: color 0.25s;
+  }
+
+  nav ul a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold) !important;
+    padding: 0.55rem 1.4rem;
+    cursor: pointer;
+    font-family: var(--ff-body);
+    font-size: 0.72rem !important;
+    letter-spacing: 0.15em !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.25s, color 0.25s;
+  }
+
+  .nav-cta:hover {
+    background: var(--gold) !important;
+    color: var(--stone-black) !important;
+  }
+
+  /* ── HERO ─────────────────────────────────────────── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10rem 4rem 6rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.8rem;
+  }
+
+  .hero-h1 {
+    font-family: var(--ff-display);
+    font-size: clamp(3.2rem, 5vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--white);
+    margin-bottom: 0.3rem;
+  }
+
+  .hero-h1 em {
+    font-family: var(--ff-italic);
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--stone-warm);
+    max-width: 38ch;
+    margin: 2rem 0 3rem;
+    font-weight: 300;
+  }
+
+  .hero-actions { display: flex; gap: 1.2rem; align-items: center; }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--stone-black);
+    padding: 1rem 2.4rem;
+    font-family: var(--ff-body);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.25s, transform 0.2s;
+  }
+
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  .btn-ghost {
+    color: var(--cream);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(245,240,232,0.3);
+    padding-bottom: 2px;
+    transition: color 0.25s, border-color 0.25s;
+  }
+
+  .btn-ghost:hover { color: var(--gold); border-color: var(--gold); }
+
+  .hero-stats {
+    display: flex; gap: 3rem;
+    margin-top: 4rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(201,169,110,0.2);
+  }
+
+  .stat-num {
+    font-family: var(--ff-display);
+    font-size: 2.4rem;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--stone-warm);
+    margin-top: 0.4rem;
+  }
+
+  /* Hero right — texture mosaic */
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-mosaic {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 100%;
+    gap: 3px;
+  }
+
+  .mosaic-block {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mosaic-block:first-child { grid-row: span 2; }
+
+  /* SVG stone textures generated inline */
+  .tex-black { background: #1f1d18; }
+  .tex-grey  { background: #4a4740; }
+  .tex-beige { background: #8c7d66; }
+  .tex-white { background: #c8bfb4; }
+  .tex-green { background: #3d4a3e; }
+
+  /* Stone vein overlay */
+  .mosaic-block::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      125deg,
+      transparent 0%,
+      transparent 48%,
+      rgba(255,255,255,0.03) 49%,
+      rgba(255,255,255,0.03) 51%,
+      transparent 52%
+    );
+  }
+
+  .mosaic-label {
+    position: absolute; bottom: 0.8rem; left: 1rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    z-index: 2;
+  }
+
+  /* Stone pattern using CSS */
+  .stone-pattern {
+    width: 100%; height: 100%;
+    position: relative;
+  }
+
+  /* ── MARQUEE ─────────────────────────────────────── */
+  .marquee-bar {
+    background: var(--gold);
+    padding: 0.85rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .marquee-inner {
+    display: inline-flex;
+    animation: marquee 22s linear infinite;
+  }
+
+  .marquee-item {
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--stone-black);
+    font-weight: 500;
+    padding: 0 2.5rem;
+  }
+
+  .marquee-dot {
+    color: rgba(26,24,20,0.4);
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ── SECTION COMMONS ─────────────────────────────── */
+  section { padding: 7rem 4rem; }
+
+  .section-eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.4rem;
+  }
+
+  .section-title {
+    font-family: var(--ff-display);
+    font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--white);
+    max-width: 22ch;
+  }
+
+  .section-title em {
+    font-family: var(--ff-italic);
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  /* ── MATERIALS / CATALOGUE ──────────────────────── */
+  #materials {
+    background: var(--stone-dark);
+  }
+
+  .materials-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4rem;
+  }
+
+  .materials-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5px;
+  }
+
+  .material-card {
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    cursor: pointer;
+    group: true;
+  }
+
+  .material-bg {
+    width: 100%; height: 100%;
+    transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+  }
+
+  .material-card:hover .material-bg { transform: scale(1.04); }
+
+  /* Individual stone textures via CSS art */
+  .mat-absolute-black {
+    background: radial-gradient(ellipse at 30% 40%, #2a2825 0%, #111008 60%, #0d0c09 100%);
+    background-image:
+      radial-gradient(ellipse at 30% 40%, #2a2825 0%, #111008 60%, #0d0c09 100%),
+      repeating-linear-gradient(78deg, transparent 0, transparent 15px, rgba(255,255,255,0.01) 15px, rgba(255,255,255,0.01) 16px);
+  }
+
+  .mat-indian-black {
+    background: linear-gradient(145deg, #1c1a17 0%, #252118 35%, #1a180f 70%, #0f0e09 100%);
+  }
+
+  .mat-kashmir-white {
+    background: radial-gradient(ellipse at 60% 30%, #e8e2d5 0%, #c9bfb0 50%, #b0a496 100%);
+  }
+
+  .mat-verde-butterfly {
+    background: linear-gradient(135deg, #2b3c2b 0%, #3d5239 30%, #4a6145 60%, #354a33 100%);
+  }
+
+  .mat-imperial-red {
+    background: linear-gradient(160deg, #5a2020 0%, #7a2e2e 30%, #6b2828 60%, #4a1818 100%);
+  }
+
+  .mat-tan-brown {
+    background: linear-gradient(125deg, #7a5c3c 0%, #8c6b47 40%, #7d6040 70%, #6b5032 100%);
+  }
+
+  .mat-blue-pearl {
+    background: radial-gradient(ellipse at 40% 50%, #2a3550 0%, #1e2a42 50%, #151e32 100%);
+  }
+
+  .mat-galaxy-black {
+    background: radial-gradient(ellipse at 50% 50%, #1a1520 0%, #120e1a 50%, #0a0810 100%);
+  }
+
+  /* Stone vein overlay on material cards */
+  .material-bg::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      repeating-linear-gradient(
+        112deg,
+        transparent 0, transparent 40px,
+        rgba(255,255,255,0.025) 40px, rgba(255,255,255,0.025) 41px
+      ),
+      repeating-linear-gradient(
+        68deg,
+        transparent 0, transparent 60px,
+        rgba(255,255,255,0.015) 60px, rgba(255,255,255,0.015) 62px
+      );
+  }
+
+  .material-overlay {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(10,9,6,0.92) 0%, transparent 100%);
+    padding: 2rem 1.5rem 1.5rem;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+
+  .material-card:hover .material-overlay {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .material-always {
+    position: absolute; bottom: 1.5rem; left: 1.5rem;
+  }
+
+  .material-name {
+    font-family: var(--ff-display);
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--white);
+  }
+
+  .material-origin {
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 0.3rem;
+  }
+
+  .material-uses {
+    font-size: 0.72rem;
+    color: rgba(245,240,232,0.65);
+    margin-top: 0.6rem;
+    line-height: 1.6;
+  }
+
+  /* ── WHY US ──────────────────────────────────────── */
+  #why {
+    background: var(--stone-black);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .why-visual {
+    position: relative;
+    height: 520px;
+  }
+
+  .why-block {
+    position: absolute;
+    border: 1px solid rgba(201,169,110,0.2);
+  }
+
+  .why-block-main {
+    inset: 0 60px 60px 0;
+    background: var(--stone-mid);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+
+  .why-block-main::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      repeating-linear-gradient(45deg, transparent 0, transparent 30px, rgba(201,169,110,0.04) 30px, rgba(201,169,110,0.04) 31px);
+  }
+
+  .why-block-main .big-text {
+    font-family: var(--ff-display);
+    font-size: 9rem;
+    font-weight: 300;
+    color: rgba(201,169,110,0.12);
+    line-height: 1;
+    user-select: none;
+  }
+
+  .why-block-accent {
+    width: 160px; height: 160px;
+    bottom: 0; right: 0;
+    background: var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .why-block-accent .num {
+    font-family: var(--ff-display);
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: var(--stone-black);
+    line-height: 1;
+  }
+
+  .why-block-accent .lbl {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(26,24,20,0.7);
+    margin-top: 0.3rem;
+  }
+
+  .why-list {
+    margin-top: 3rem;
+    display: flex; flex-direction: column; gap: 2rem;
+  }
+
+  .why-item {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    gap: 1.2rem;
+    align-items: flex-start;
+  }
+
+  .why-icon {
+    width: 2.5rem; height: 2.5rem;
+    border: 1px solid rgba(201,169,110,0.35);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .why-icon svg { width: 1rem; height: 1rem; }
+
+  .why-item-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--cream);
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.02em;
+  }
+
+  .why-item-text {
+    font-size: 0.82rem;
+    color: var(--stone-warm);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ── APPLICATIONS ───────────────────────────────── */
+  #applications {
+    background: var(--stone-dark);
+  }
+
+  .applications-intro {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    align-items: flex-start;
+  }
+
+  .applications-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(201,169,110,0.1);
+  }
+
+  .app-card {
+    background: var(--stone-dark);
+    padding: 2.5rem 2rem;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+
+  .app-card:hover { background: var(--stone-mid); }
+
+  .app-number {
+    font-family: var(--ff-display);
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: rgba(201,169,110,0.15);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .app-title {
+    font-family: var(--ff-display);
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 0.8rem;
+  }
+
+  .app-desc {
+    font-size: 0.8rem;
+    color: var(--stone-warm);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .app-tag {
+    display: inline-block;
+    margin-top: 1.2rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(201,169,110,0.3);
+    padding: 0.3rem 0.7rem;
+  }
+
+  /* ── PROCESS ────────────────────────────────────── */
+  #process {
+    background: var(--stone-black);
+    text-align: center;
+  }
+
+  .process-header { margin-bottom: 5rem; }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    position: relative;
+  }
+
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 2rem;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(201,169,110,0.3) 20%, rgba(201,169,110,0.3) 80%, transparent);
+  }
+
+  .process-step { padding: 0 1.5rem; position: relative; }
+
+  .step-dot {
+    width: 4rem; height: 4rem;
+    border: 1px solid rgba(201,169,110,0.4);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.8rem;
+    font-family: var(--ff-display);
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--gold);
+    background: var(--stone-black);
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-title {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--cream);
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.05em;
+  }
+
+  .step-desc {
+    font-size: 0.75rem;
+    color: var(--stone-warm);
+    line-height: 1.7;
+  }
+
+  /* ── WHO WE SERVE ───────────────────────────────── */
+  #segments {
+    background: var(--stone-dark);
+  }
+
+  .segments-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5px;
+    margin-top: 4rem;
+  }
+
+  .seg-card {
+    background: var(--stone-black);
+    padding: 3rem 2rem;
+    border-top: 3px solid transparent;
+    transition: border-color 0.3s, background 0.3s;
+    cursor: default;
+  }
+
+  .seg-card:hover {
+    border-top-color: var(--gold);
+    background: #1f1d18;
+  }
+
+  .seg-icon {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+
+  .seg-name {
+    font-family: var(--ff-display);
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+
+  .seg-desc {
+    font-size: 0.8rem;
+    color: var(--stone-warm);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .seg-list {
+    margin-top: 1.2rem;
+    list-style: none;
+  }
+
+  .seg-list li {
+    font-size: 0.72rem;
+    color: var(--stone-warm);
+    padding: 0.3rem 0;
+    border-bottom: 1px solid rgba(122,112,96,0.2);
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+
+  .seg-list li::before {
+    content: '—';
+    color: var(--gold);
+    font-size: 0.6rem;
+  }
+
+  /* ── CONTACT / INQUIRY ──────────────────────────── */
+  #contact {
+    background: var(--stone-black);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    min-height: 80vh;
+  }
+
+  .contact-left {
+    background: var(--stone-dark);
+    padding: 6rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .contact-right {
+    background: var(--stone-black);
+    padding: 6rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .contact-info { margin-top: 3rem; }
+
+  .contact-row {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(201,169,110,0.15);
+  }
+
+  .contact-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+
+  .contact-value {
+    font-size: 0.9rem;
+    color: var(--cream);
+    font-weight: 300;
+  }
+
+  /* FORM */
+  .form-group { margin-bottom: 1.5rem; }
+
+  .form-label {
+    display: block;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--stone-warm);
+    margin-bottom: 0.5rem;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(201,169,110,0.2);
+    color: var(--cream);
+    padding: 0.9rem 1.1rem;
+    font-family: var(--ff-body);
+    font-size: 0.85rem;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.25s;
+    -webkit-appearance: none;
+  }
+
+  .form-input:focus,
+  .form-select:focus,
+  .form-textarea:focus {
+    border-color: var(--gold);
+  }
+
+  .form-input::placeholder,
+  .form-textarea::placeholder {
+    color: rgba(122,112,96,0.5);
+  }
+
+  .form-select option { background: var(--stone-black); }
+
+  .form-textarea { resize: vertical; min-height: 120px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  .form-submit {
+    width: 100%;
+    background: var(--gold);
+    color: var(--stone-black);
+    border: none;
+    padding: 1.1rem;
+    font-family: var(--ff-body);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.2s;
+    margin-top: 0.5rem;
+  }
+
+  .form-submit:hover {
+    background: var(--gold-light);
+    transform: translateY(-1px);
+  }
+
+  /* ── FOOTER ─────────────────────────────────────── */
+  footer {
+    background: #0f0e0b;
+    padding: 3rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(201,169,110,0.1);
+  }
+
+  .footer-logo {
+    font-family: var(--ff-display);
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  .footer-copy {
+    font-size: 0.68rem;
+    color: var(--stone-warm);
+    letter-spacing: 0.05em;
+  }
+
+  .footer-links {
+    display: flex; gap: 2rem; list-style: none;
+  }
+
+  .footer-links a {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--stone-warm);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  /* ── MOBILE ─────────────────────────────────────── */
+  .mobile-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--cream);
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 1.5rem; }
+    nav ul { display: none; }
+    .mobile-nav-toggle { display: block; }
+
+    #hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 8rem 1.5rem 3rem; }
+    .hero-right { height: 55vw; }
+    .hero-stats { gap: 2rem; }
+
+    section { padding: 4rem 1.5rem; }
+
+    .materials-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+    .materials-grid { grid-template-columns: repeat(2, 1fr); }
+
+    #why { grid-template-columns: 1fr; gap: 3rem; }
+    .why-visual { height: 280px; }
+
+    .applications-intro { grid-template-columns: 1fr; gap: 2rem; }
+    .applications-grid { grid-template-columns: 1fr 1fr; }
+
+    .process-steps { grid-template-columns: 1fr 1fr; row-gap: 3rem; }
+    .process-steps::before { display: none; }
+
+    .segments-grid { grid-template-columns: 1fr 1fr; }
+
+    #contact { grid-template-columns: 1fr; }
+    .contact-left, .contact-right { padding: 4rem 1.5rem; }
+
+    footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+  }
+
+  @media (max-width: 540px) {
+    .materials-grid { grid-template-columns: 1fr; }
+    .applications-grid { grid-template-columns: 1fr; }
+    .segments-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr; }
+  }
+
+  /* ── ANIMATIONS ─────────────────────────────────── */
+  }
+
+  /* ── WHATSAPP FLOAT ─────────────────────────────── */
+  .wa-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-decoration: none;
+    animation: wa-bounce 2s ease-in-out infinite;
+  }
+
+  .wa-bubble {
+    background: #25D366;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .wa-float:hover .wa-bubble {
+    transform: scale(1.1);
+    box-shadow: 0 6px 28px rgba(37,211,102,0.55);
+  }
+
+  .wa-bubble svg {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .wa-label {
+    background: #1A1814;
+    color: #fff;
+    font-family: var(--ff-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    white-space: nowrap;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: translateX(10px);
+    transition: opacity 0.25s, transform 0.25s;
+  }
+
+  .wa-float:hover .wa-label {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  @keyframes wa-bounce {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-6px); }
+  }
+
+  @media (max-width: 600px) {
+    .wa-float { bottom: 1.2rem; right: 1.2rem; }
+    .wa-label { display: none; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-logo">Agrasen <span>Stone & Marbles</span></div>
+  <ul>
+    <li><a href="#materials">Materials</a></li>
+    <li><a href="#applications">Applications</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+  </ul>
+  <button class="mobile-nav-toggle" onclick="this.nextElementSibling && alert('Menu')">☰</button>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Natural Stone & Granite Specialists</p>
+    <h1 class="hero-h1">
+      Stone that<br>
+      <em>outlasts</em><br>
+      everything.
+    </h1>
+    <p class="hero-sub">
+      Premium granite, marble and natural stone — cut, finished and delivered for residential homes, commercial spaces and architectural projects across India.
+    </p>
+    <div class="hero-actions">
+      <a href="#materials" class="btn-primary">Explore Materials</a>
+      <a href="#contact" class="btn-ghost">Request a Quote →</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div>
+        <div class="stat-num">80+</div>
+        <div class="stat-label">Stone Varieties</div>
+      </div>
+      <div>
+        <div class="stat-num">15+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-mosaic">
+      <div class="mosaic-block tex-black">
+        <div class="stone-pattern" style="background: radial-gradient(ellipse at 30% 40%, #2a2825 0%, #111008 60%);"></div>
+        <span class="mosaic-label">Absolute Black</span>
+      </div>
+      <div class="mosaic-block tex-white">
+        <div class="stone-pattern" style="background: radial-gradient(ellipse at 60% 30%, #e8e2d5 0%, #c9bfb0 100%);"></div>
+        <span class="mosaic-label">Kashmir White</span>
+      </div>
+      <div class="mosaic-block tex-green">
+        <div class="stone-pattern" style="background: linear-gradient(135deg, #2b3c2b 0%, #4a6145 100%);"></div>
+        <span class="mosaic-label">Verde Butterfly</span>
+      </div>
+      <div class="mosaic-block tex-grey">
+        <div class="stone-pattern" style="background: linear-gradient(145deg, #4a4740 0%, #6b6560 100%);"></div>
+        <span class="mosaic-label">Silver Pearl</span>
+      </div>
+      <div class="mosaic-block tex-beige">
+        <div class="stone-pattern" style="background: linear-gradient(125deg, #8c7d66 0%, #6b5032 100%);"></div>
+        <span class="mosaic-label">Tan Brown</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MARQUEE ── -->
+<div class="marquee-bar" aria-hidden="true">
+  <div class="marquee-inner">
+    <span class="marquee-item">Granite <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Marble <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Quartzite <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Sandstone <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Slate <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Limestone <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Custom Cuts <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Pan India Delivery <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Granite <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Marble <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Quartzite <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Sandstone <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Slate <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Limestone <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Custom Cuts <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Pan India Delivery <span class="marquee-dot">◆</span></span>
+  </div>
+</div>
+
+<!-- ── MATERIALS ── -->
+<section id="materials">
+  <div class="materials-header">
+    <div>
+      <p class="section-eyebrow">Our Catalogue</p>
+      <h2 class="section-title">Over 80 varieties of <em>natural stone</em></h2>
+    </div>
+    <a href="#contact" class="btn-ghost" style="white-space:nowrap">Request Samples →</a>
+  </div>
+
+  <div class="materials-grid">
+    <div class="material-card">
+      <div class="material-bg mat-absolute-black"></div>
+      <div class="material-always">
+        <div class="material-name">Absolute Black</div>
+        <div class="material-origin">South India · Granite</div>
+      </div>
+      <div class="material-overlay">
+        <div class="material-uses">Flooring · Kitchen Tops · Cladding · Monuments</div>
+      </div>
+    </div>
+
+    <div class="material-card">
+      <div class="material-bg mat-kashmir-white"></div>
+      <div class="material-always">
+        <div class="material-name">Kashmir White</div>
+        <div class="material-origin">Andhra Pradesh · Granite</div>
+      </div>
+      <div class="material-overlay">
+        <div class="material-uses">Countertops · Bathroom · Wall Panels · Stairs</div>
+      </div>
+    </div>
+
+    <div class="material-card">
+      <div class="material-bg mat-verde-butterfly"></div>
+      <div class="material-always">
+        <div class="material-name">Verde Butterfly</div>
+        <div class="material-origin">Rajasthan · Granite</div>
+      </div>
+      <div class="material-overlay">
+        <div class="material-uses">Feature Walls · Luxury Interiors · Commercial</div>
+      </div>
+    </div>
+
+    <div class="material-card">
+      <div class="material-bg mat-imperial-red"></div>
+      <div class="material-always">
+        <div class="material-name">Imperial Red</div>
+        <div class="material-origin">Karnataka · Granite</div>
+      </div>
+      <div class="material-overlay">
+        <div class="material-uses">Flooring · Exteriors · Landscape · Memorials</div>
+      </div>
+    </div>
+
+    <div class="material-card">
+      <div class="material-bg mat-tan-brown"></div>
+      <div class="material-always">
+        <div class="material-name">Tan Brown</div>
+        <div class="material-origin">Andhra Pradesh · Granite</div>
+      </div>
+      <div class="material-overlay">
+        <div class="material-uses">Kitchen · Vanity Tops · Steps · Columns</div>
+      </div>
+    </div>
+
+    <div class="material-card">
+      <div class="material-bg mat-blue-pearl"></div>
+      <div class="material-always">
+        <div class="material-name">Blue Pearl</div>
+        <div class="material-origin">Imported · Granite</div>
+      </div>
+      <div class="material-overlay">
+        <div class="material-uses">Premium Interiors · Accent Walls · Hotel Lobbies</div>
+      </div>
+    </div>
+
+    <div class="material-card">
+      <div class="material-bg mat-galaxy-black"></div>
+      <div class="material-always">
+        <div class="material-name">Black Galaxy</div>
+        <div class="material-origin">Andhra Pradesh · Granite</div>
+      </div>
+      <div class="material-overlay">
+        <div class="material-uses">Flooring · Countertops · Export · Monuments</div>
+      </div>
+    </div>
+
+    <div class="material-card" style="background: var(--stone-mid); display:flex; align-items:center; justify-content:center; text-align:center; padding:2rem;">
+      <div>
+        <div style="font-family:var(--ff-display);font-size:2rem;color:var(--gold);font-weight:300;margin-bottom:0.5rem;">80+</div>
+        <div style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone-warm);">More varieties available</div>
+        <a href="#contact" class="btn-primary" style="margin-top:1.5rem;display:inline-block;font-size:0.68rem;padding:0.8rem 1.5rem;">View Full Catalogue</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY US ── -->
+<section id="why">
+  <div class="why-visual">
+    <div class="why-block why-block-main">
+      <div class="big-text">SW</div>
+    </div>
+    <div class="why-block why-block-accent">
+      <div class="num">15+</div>
+      <div class="lbl">Years in<br>Natural Stone</div>
+    </div>
+  </div>
+
+  <div>
+    <p class="section-eyebrow">Why Agrasen Stone & Marbles</p>
+    <h2 class="section-title">Sourced from the <em>quarry</em>. Cut with precision.</h2>
+
+    <div class="why-list">
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 16 16" fill="none" stroke="#C9A96E" stroke-width="1.5">
+            <path d="M2 8l4 4 8-8"/>
+          </svg>
+        </div>
+        <div>
+          <div class="why-item-title">Direct from Quarry — No Middlemen</div>
+          <div class="why-item-text">We source directly from India's leading quarries in Karnataka, Andhra Pradesh and Rajasthan, passing cost savings directly to you.</div>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 16 16" fill="none" stroke="#C9A96E" stroke-width="1.5">
+            <rect x="2" y="2" width="12" height="12" rx="1"/>
+            <path d="M5 8h6M8 5v6"/>
+          </svg>
+        </div>
+        <div>
+          <div class="why-item-title">Custom Cutting & Finishing</div>
+          <div class="why-item-text">Polished, honed, flamed or brushed — we cut to your exact specifications with CNC precision. Slabs, tiles, countertops or cladding panels.</div>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 16 16" fill="none" stroke="#C9A96E" stroke-width="1.5">
+            <circle cx="8" cy="8" r="6"/>
+            <path d="M8 4v4l3 2"/>
+          </svg>
+        </div>
+        <div>
+          <div class="why-item-title">Fast Turnaround, Pan India Delivery</div>
+          <div class="why-item-text">Ready stock for urgent requirements. Custom orders dispatched within 7–14 days. Delivered safely to your site, anywhere in India.</div>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 16 16" fill="none" stroke="#C9A96E" stroke-width="1.5">
+            <path d="M8 2l1.5 3 3.5.5-2.5 2.5.5 3.5L8 10l-3 1.5.5-3.5L3 5.5 6.5 5z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="why-item-title">Quality Assured</div>
+          <div class="why-item-text">Every slab is inspected for consistency, colour, and structural integrity. We stand behind our material with full documentation and grade certification.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── APPLICATIONS ── -->
+<section id="applications">
+  <div class="applications-intro">
+    <div>
+      <p class="section-eyebrow">Applications</p>
+      <h2 class="section-title">Stone for every <em>space</em></h2>
+    </div>
+    <p style="font-size:0.9rem;color:var(--stone-warm);line-height:1.8;font-weight:300;align-self:flex-end;">
+      From kitchen countertops in a family home to lobby floors in a five-star hotel — our stone adapts to every environment, delivering beauty that's built to last decades.
+    </p>
+  </div>
+
+  <div class="applications-grid">
+    <div class="app-card">
+      <div class="app-number">01</div>
+      <div class="app-title">Kitchen Countertops</div>
+      <div class="app-desc">Heat-resistant, scratch-proof and hygienic. Granite is the top choice for modern Indian kitchens — available in slabs up to 3m.</div>
+      <span class="app-tag">Residential</span>
+    </div>
+
+    <div class="app-card">
+      <div class="app-number">02</div>
+      <div class="app-title">Flooring</div>
+      <div class="app-desc">High-traffic flooring in homes, offices, showrooms, airports and malls. Available in any size tile, with polished or anti-slip finish.</div>
+      <span class="app-tag">Residential · Commercial</span>
+    </div>
+
+    <div class="app-card">
+      <div class="app-number">03</div>
+      <div class="app-title">Bathroom & Vanity</div>
+      <div class="app-desc">Water-resistant and timeless. Create luxury bathrooms with matched stone for floors, walls, vanity tops and shower enclosures.</div>
+      <span class="app-tag">Residential</span>
+    </div>
+
+    <div class="app-card">
+      <div class="app-number">04</div>
+      <div class="app-title">Exterior Cladding</div>
+      <div class="app-desc">Weather-resistant stone cladding for building façades, pillars and entrance features. Transforms any structure's curb appeal permanently.</div>
+      <span class="app-tag">Builders · Commercial</span>
+    </div>
+
+    <div class="app-card">
+      <div class="app-number">05</div>
+      <div class="app-title">Staircases & Landings</div>
+      <div class="app-desc">Custom-cut treads and risers in granite or marble. Durable, elegant and low-maintenance for both residential and commercial stairs.</div>
+      <span class="app-tag">Builders · Architects</span>
+    </div>
+
+    <div class="app-card">
+      <div class="app-number">06</div>
+      <div class="app-title">Landscape & Outdoor</div>
+      <div class="app-desc">Garden paths, pool surrounds, patio surfaces and water features. Natural stone weathers beautifully and requires zero maintenance outdoors.</div>
+      <span class="app-tag">Residential · Commercial</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESS ── -->
+<section id="process">
+  <div class="process-header">
+    <p class="section-eyebrow">How We Work</p>
+    <h2 class="section-title" style="margin:0 auto;text-align:center;">From inquiry to <em>installation-ready</em></h2>
+  </div>
+
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-dot">1</div>
+      <div class="step-title">Share Your Requirement</div>
+      <div class="step-desc">Tell us the stone type, finish, quantity and application. We respond within 2–4 hours.</div>
+    </div>
+    <div class="process-step">
+      <div class="step-dot">2</div>
+      <div class="step-title">Sample Selection</div>
+      <div class="step-desc">Receive physical samples or high-res photos of available stock that match your brief.</div>
+    </div>
+    <div class="process-step">
+      <div class="step-dot">3</div>
+      <div class="step-title">Custom Quotation</div>
+      <div class="step-desc">Transparent pricing per sq ft or slab — with cutting, finishing and delivery included.</div>
+    </div>
+    <div class="process-step">
+      <div class="step-dot">4</div>
+      <div class="step-title">Cutting & Finishing</div>
+      <div class="step-desc">Your stone is cut to exact dimensions and finished to specification in our facility.</div>
+    </div>
+    <div class="process-step">
+      <div class="step-dot">5</div>
+      <div class="step-title">Delivery to Site</div>
+      <div class="step-desc">Packed and dispatched safely to your project site anywhere in India — on time.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHO WE SERVE ── -->
+<section id="segments">
+  <div style="text-align:center;margin-bottom:1rem;">
+    <p class="section-eyebrow">Who We Serve</p>
+    <h2 class="section-title" style="margin:0 auto;text-align:center;">Built for <em>every buyer</em></h2>
+  </div>
+
+  <div class="segments-grid">
+    <div class="seg-card">
+      <span class="seg-icon">🏠</span>
+      <div class="seg-name">Homeowners</div>
+      <div class="seg-desc">Upgrade your kitchen, bathroom or entire home with premium natural stone at builder-direct prices.</div>
+      <ul class="seg-list">
+        <li>Kitchen countertops</li>
+        <li>Flooring & bathrooms</li>
+        <li>Feature walls</li>
+        <li>Outdoor spaces</li>
+      </ul>
+    </div>
+
+    <div class="seg-card">
+      <span class="seg-icon">📐</span>
+      <div class="seg-name">Architects & Designers</div>
+      <div class="seg-desc">Specification-grade materials with full documentation. We partner with design professionals for complex briefs.</div>
+      <ul class="seg-list">
+        <li>Project specification</li>
+        <li>Sample books available</li>
+        <li>Trade pricing</li>
+        <li>Custom sizes & finishes</li>
+      </ul>
+    </div>
+
+    <div class="seg-card">
+      <span class="seg-icon">🏗️</span>
+      <div class="seg-name">Builders & Contractors</div>
+      <div class="seg-desc">Bulk supply with consistent quality across batches. Reliable timelines so your project stays on schedule.</div>
+      <ul class="seg-list">
+        <li>Bulk order pricing</li>
+        <li>Batch consistency</li>
+        <li>Credit facility available</li>
+        <li>Site delivery</li>
+      </ul>
+    </div>
+
+    <div class="seg-card">
+      <span class="seg-icon">🏢</span>
+      <div class="seg-name">Commercial Projects</div>
+      <div class="seg-desc">Hotels, malls, offices and hospitality projects. Large-format slabs, special finishes and pan-India logistics.</div>
+      <ul class="seg-list">
+        <li>Hotel & hospitality</li>
+        <li>Office lobbies</li>
+        <li>Retail & showrooms</li>
+        <li>Institutional buildings</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact" style="padding:0;">
+  <div class="contact-left">
+    <p class="section-eyebrow">Get in Touch</p>
+    <h2 class="section-title">Ready to <em>start</em> your project?</h2>
+    <p style="font-size:0.85rem;color:var(--stone-warm);line-height:1.8;font-weight:300;margin-top:1.5rem;max-width:38ch;">
+      Tell us your requirement and we'll get back to you within a few hours with options, samples and a quote — no obligation.
+    </p>
+
+    <div class="contact-info">
+      <div class="contact-row">
+        <div class="contact-label">Phone / WhatsApp</div>
+        <div class="contact-value">+91 98765 43210</div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-label">Email</div>
+        <div class="contact-value">hello@agrasenstones.in</div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-label">Showroom & Yard</div>
+        <div class="contact-value">Stone Works, Industrial Area,<br>Sector 5, Your City — 110001</div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-label">Working Hours</div>
+        <div class="contact-value">Mon – Sat · 9 AM to 6 PM</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-right">
+    <p style="font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;">Inquiry Form</p>
+
+    <form onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Full Name *</label>
+          <input type="text" class="form-input" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone *</label>
+          <input type="tel" class="form-input" placeholder="+91 XXXXX XXXXX" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-input" placeholder="you@email.com">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">I am a *</label>
+        <select class="form-select" required>
+          <option value="" disabled selected>Select your category</option>
+          <option>Homeowner</option>
+          <option>Architect / Interior Designer</option>
+          <option>Builder / Contractor</option>
+          <option>Commercial Developer</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Stone Type</label>
+          <select class="form-select">
+            <option value="" disabled selected>Select</option>
+            <option>Granite</option>
+            <option>Marble</option>
+            <option>Quartzite</option>
+            <option>Sandstone</option>
+            <option>Slate</option>
+            <option>Not Sure — Need Advice</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Quantity (Sq Ft)</label>
+          <input type="text" class="form-input" placeholder="e.g. 500 sq ft">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Project Details</label>
+        <textarea class="form-textarea" placeholder="Tell us about your project — location, application, timeline, any specific requirements..."></textarea>
+      </div>
+
+      <button type="submit" class="form-submit">Send Inquiry →</button>
+    </form>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-logo">Agrasen Stone & Marbles</div>
+  <div class="footer-copy">© 2024 Agrasen Stone & Marbles. All rights reserved.</div>
+  <ul class="footer-links">
+    <li><a href="#materials">Materials</a></li>
+    <li><a href="#applications">Applications</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</footer>
+
+<script>
+  
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = '✓ Inquiry Sent — We\'ll Call You Soon';
+    btn.style.background = '#3d5239';
+    btn.style.color = '#c8e6c9';
+    btn.disabled = true;
+  }
+
+  // Mobile nav
+  const toggle = document.querySelector('.mobile-nav-toggle');
+  const navUl = document.querySelector('nav ul');
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      if (navUl.style.display === 'flex') {
+        navUl.style.display = 'none';
+        toggle.textContent = '☰';
+      } else {
+        navUl.style.display = 'flex';
+        navUl.style.flexDirection = 'column';
+        navUl.style.position = 'absolute';
+        navUl.style.top = '100%';
+        navUl.style.left = '0';
+        navUl.style.right = '0';
+        navUl.style.background = 'rgba(26,24,20,0.98)';
+        navUl.style.padding = '1.5rem';
+        navUl.style.gap = '1rem';
+        toggle.textContent = '✕';
+      }
+    });
+  }
+</script>
+
+<!-- ── WHATSAPP FLOAT ── -->
+<a class="wa-float" href="https://wa.me/919876543210?text=Hi%2C%20I%20am%20interested%20in%20your%20stone%20and%20marble%20products.%20Please%20share%20details." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <span class="wa-label">Chat with us</span>
+  <div class="wa-bubble">
+    <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.859L.057 23.25a.75.75 0 00.916.916l5.434-1.474A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.695-.5-5.243-1.377l-.374-.216-3.878 1.051 1.053-3.765-.228-.38A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+    </svg>
+  </div>
+</a>
+
+</body>
+</html>
